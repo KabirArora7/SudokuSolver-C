@@ -81,7 +81,11 @@ bool solve() {
 }
 
 int main() {
-    solve();
-    print();
+    if (!solve()){
+        printf("It cannot be solved");
+    }
+    else{
+        print();
+    }
     return 0;
 }
