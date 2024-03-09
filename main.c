@@ -82,7 +82,7 @@ bool solve() {
 
 int main() {
     if (!solve()){
-        printf("It cannot be solved");
+        printf("No solutions exists");
     }
     else{
         print();
