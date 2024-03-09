@@ -59,15 +59,18 @@ bool possible(int row, int column, int number) {
     return isTrue;
 }
 
-bool solve() {
+int n = 0;
+
+bool solveSudoku() {
     int row, column, number;
+    n = n+1;
     for (row = 0; row < 9; row++) {
         for (column = 0; column < 9; column++) {
             if (grid[row][column] == 0) {
                 for (number = 1; number <= 9; number++) {
                     if (possible(row, column, number)) {
                         grid[row][column] = number;
-                        if (solve()) {
+                        if (solveSudoku()) {
                             return isTrue;
                         }
                         grid[row][column] = 0;
@@ -81,11 +84,15 @@ bool solve() {
 }
 
 int main() {
-    if (!solve()){
-        printf("No solutions exists");
+    
+    if (!solveSudoku()){
+        printf("No solutions Exists");
     }
     else{
         print();
     }
+    printf("\n");
+    printf("Number of times function was called : %d",n);
     return 0;
+    
 }
