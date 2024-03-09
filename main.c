@@ -59,11 +59,11 @@ bool possible(int row, int column, int number) {
     return isTrue;
 }
 
-int n = 0;
+int count = 0;
 
 bool solveSudoku() {
     int row, column, number;
-    n = n+1;
+    count = count+1;
     for (row = 0; row < 9; row++) {
         for (column = 0; column < 9; column++) {
             if (grid[row][column] == 0) {
@@ -85,14 +85,17 @@ bool solveSudoku() {
 
 int main() {
     
+    printf( "The input Sudoku puzzle : \n" );
+    print(grid);
+
     if (!solveSudoku()){
         printf("No solutions Exists");
     }
     else{
+        printf("Solution found after %d iterations : \n" ,count) ;
         print();
     }
     printf("\n");
-    printf("Number of times function was called : %d",n);
     return 0;
     
 }
